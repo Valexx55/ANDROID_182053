@@ -6,6 +6,10 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
+/**
+ * ESTA SOLUCIÓN ESTÁ INSPIRADA POR EL NOVIO DE SHAKIRA XD
+ */
+
 public class MiLinearLayout extends LinearLayout {
 
     private boolean tocado;
