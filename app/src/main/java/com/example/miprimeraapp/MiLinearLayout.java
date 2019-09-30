@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 
 /**
  * ESTA SOLUCIÓN ESTÁ INSPIRADA POR EL NOVIO DE SHAKIRA XD
+ * ADD COMENTARIOS DE PRUEBA
  */
 
 public class MiLinearLayout extends LinearLayout {
