@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,15 +22,51 @@ public class CajaActivity extends AppCompatActivity {
     private int n_cajas_tocadas;
     private int color_negro;
 
+
+
+    private int obtenerNumeroAleatorio  ()
+    {
+        int num_aleatorio = 0;
+
+            num_aleatorio = ((int)(Math.random() * 100))+1;
+
+        return num_aleatorio;
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caja);
         this.color_negro = getResources().getColor(R.color.black);
+
+        //TODO obtener las TextView de mi Layout
+        ViewGroup elemento_padre = findViewById(R.id.caja_raiz);
+        List<View> l_vistas = findViewsByType(elemento_padre, TextView.class);
+        Log.d("MIAPP", "El num de TextViews es " + l_vistas.size());
+        //TODO recorrer las cajas de texto y darle un valor numérico aleatorio
+        TextView textView = null;
+        int n_aleatorio = 0;
+        String str_n = null;
+        for (View vista_actual : l_vistas)//for each
+        {
+            textView = (TextView)vista_actual;//casting de vista a TextView
+            n_aleatorio = obtenerNumeroAleatorio();//genero el aleatorio
+            str_n = String.valueOf(n_aleatorio);//convierto el número a su equivalento texto
+            textView.setText(str_n);//asigno a la caja de texto el número generado
+        }
+
+
+
+
+
+
+
+
     }
 
 
-
+//num_caja = (int) (Math.random() * 100) + 1;
     public void cajaTocada(View view) {
         Log.d("MIAPP", "Caja Tocada");
         numero_toques = numero_toques + 1;
@@ -57,11 +95,11 @@ public class CajaActivity extends AppCompatActivity {
     //TODO mensaje de salida cuando se complete el juego
     public void cajaTocada3(View view) {
         Log.d("MIAPP", "Caja Tocada");
-        LinearLayout linearLayout = (LinearLayout)view;//casting
+        //LinearLayout linearLayout = (LinearLayout)view;//casting
         if (view.getTag() == null)
         {
             Log.d("MIAPP", "Tocada por primera vez");
-            linearLayout.setBackgroundColor(color_negro);//pongo negra la caja
+            view.setBackgroundColor(color_negro);//pongo negra la caja
             view.setTag(true);
             n_cajas_tocadas++;
             if (n_cajas_tocadas==8)
@@ -131,4 +169,12 @@ public class CajaActivity extends AppCompatActivity {
          return lvistas;
      }
 
+    public void empezar(View view) {
+        Log.d("MIAPP", "Juego iniciado");
+        view.setVisibility(View.GONE); //elimino el botón
+        Toast toast = Toast.makeText(this, "JUEGO EMPEZADO", Toast.LENGTH_LONG);//compongo el mensaje
+        toast.show();//lo muestro
+
+        long tinicial = System.currentTimeMillis();
+    }
 }
