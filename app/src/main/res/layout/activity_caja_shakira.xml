@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CajaShakiraActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+
+        <com.example.miprimeraapp.MiLinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/AQUA"
+            android:orientation="horizontal">
+        </com.example.miprimeraapp.MiLinearLayout>
+
+        <com.example.miprimeraapp.MiLinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/BLUE"
+            android:orientation="horizontal">
+        </com.example.miprimeraapp.MiLinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <com.example.miprimeraapp.MiLinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/RED"
+            android:orientation="horizontal">
+
+        </com.example.miprimeraapp.MiLinearLayout>
+
+        <com.example.miprimeraapp.MiLinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/YELLOW"
+            android:orientation="horizontal">
+        </com.example.miprimeraapp.MiLinearLayout>
+
+        <com.example.miprimeraapp.MiLinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/MAROON"
+            android:orientation="horizontal">
+        </com.example.miprimeraapp.MiLinearLayout>
+
+    </LinearLayout>
+
+    <com.example.miprimeraapp.MiLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/RED"
+        android:orientation="horizontal">
+
+        <com.example.miprimeraapp.MiLinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada2"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/LIME"
+            android:orientation="horizontal">
+        </com.example.miprimeraapp.MiLinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/BLUE"
+            android:orientation="vertical">
+
+            <com.example.miprimeraapp.MiLinearLayout
+                android:layout_width="match_parent"
+                android:onClick="cajaTocada2"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/FUCHSIA"
+                android:orientation="horizontal">
+            </com.example.miprimeraapp.MiLinearLayout>
+
+            <com.example.miprimeraapp.MiLinearLayout
+                android:layout_width="match_parent"
+                android:onClick="cajaTocada2"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/GREEN"
+                android:orientation="horizontal">
+            </com.example.miprimeraapp.MiLinearLayout>
+        </LinearLayout>
+    </com.example.miprimeraapp.MiLinearLayout>
+</LinearLayout>

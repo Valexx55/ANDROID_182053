@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CajaActivity">
+
+
+    <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Botón"/>
+
+            -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/AQUA"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/BLUE"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/RED"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/YELLOW"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/MAROON"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/RED"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:onClick="cajaTocada3"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/LIME"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/BLUE"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:onClick="cajaTocada3"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/FUCHSIA"
+                android:orientation="horizontal">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:onClick="cajaTocada3"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/GREEN"
+                android:orientation="horizontal">
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
