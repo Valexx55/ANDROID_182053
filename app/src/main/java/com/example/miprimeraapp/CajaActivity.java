@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ public class CajaActivity extends AppCompatActivity {
     private int numero_toques;
     private int n_cajas_tocadas;
     private int color_negro;
+    private int total;
+    private long tinicial;
 
 
 
@@ -28,7 +31,7 @@ public class CajaActivity extends AppCompatActivity {
     {
         int num_aleatorio = 0;
 
-            num_aleatorio = ((int)(Math.random() * 100))+1;
+            num_aleatorio = ((int)(Math.random() * 10))+1;
 
         return num_aleatorio;
 
@@ -41,17 +44,20 @@ public class CajaActivity extends AppCompatActivity {
         this.color_negro = getResources().getColor(R.color.black);
 
         //TODO obtener las TextView de mi Layout
-        ViewGroup elemento_padre = findViewById(R.id.caja_raiz);
+        ViewGroup elemento_padre = findViewById(R.id.layout_cajas);
         List<View> l_vistas = findViewsByType(elemento_padre, TextView.class);
         Log.d("MIAPP", "El num de TextViews es " + l_vistas.size());
         //TODO recorrer las cajas de texto y darle un valor numérico aleatorio
         TextView textView = null;
         int n_aleatorio = 0;
         String str_n = null;
+        total = 0;
         for (View vista_actual : l_vistas)//for each
         {
             textView = (TextView)vista_actual;//casting de vista a TextView
             n_aleatorio = obtenerNumeroAleatorio();//genero el aleatorio
+            total = total + n_aleatorio;
+            //total += n_aleatorio;//vpro
             str_n = String.valueOf(n_aleatorio);//convierto el número a su equivalento texto
             textView.setText(str_n);//asigno a la caja de texto el número generado
         }
@@ -94,6 +100,8 @@ public class CajaActivity extends AppCompatActivity {
 //VERSIÓN 3 CON SET TAG
     //TODO mensaje de salida cuando se complete el juego
     public void cajaTocada3(View view) {
+
+
         Log.d("MIAPP", "Caja Tocada");
         //LinearLayout linearLayout = (LinearLayout)view;//casting
         if (view.getTag() == null)
@@ -175,6 +183,33 @@ public class CajaActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, "JUEGO EMPEZADO", Toast.LENGTH_LONG);//compongo el mensaje
         toast.show();//lo muestro
 
-        long tinicial = System.currentTimeMillis();
+        this.tinicial = System.currentTimeMillis();
+    }
+
+    public void probarSolucion(View view) {
+        //1 obtener la solución del usuario
+        EditText editText = findViewById(R.id.caja_solucion);
+        String s_num = editText.getText().toString();
+        int solucion_usr = Integer.parseInt(s_num);
+        //2 comprobar si es igual al total
+        if (solucion_usr==total)
+        {
+            Log.d("MIAPP", "Ha acertado");
+            //calcular el tiempo total, informarle y salir
+            long t_final = System.currentTimeMillis();
+            long t_total = t_final-this.tinicial;//ms
+            int t_segundos = (int)t_total/1000;//lo paso a segundos
+            //informo
+            Toast mensaje_OK = Toast.makeText(this, "Enhorabuena :)", Toast.LENGTH_LONG);
+            mensaje_OK.show();
+            //salir
+            finish();
+        }
+        else{
+            Log.d("MIAPP", "Ha fallado");
+            Toast mensaje_KO = Toast.makeText(this, "Has fallao :(", Toast.LENGTH_SHORT);
+            mensaje_KO.show();
+        }
+
     }
 }
