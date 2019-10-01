@@ -3,6 +3,7 @@ package com.example.miprimeraapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -203,7 +204,13 @@ public class CajaActivity extends AppCompatActivity {
             Toast mensaje_OK = Toast.makeText(this, "Enhorabuena :)", Toast.LENGTH_LONG);
             mensaje_OK.show();
             //salir
-            finish();
+            //finish();
+            //TODO TRANSITAR A LA ACTIVIDAD DE VICTORIA
+            //preparo el intent
+            Intent intent = new Intent(this, VictoriaActivity.class);
+            //lanzo
+            startActivity(intent);
+
         }
         else{
             Log.d("MIAPP", "Ha fallado");
